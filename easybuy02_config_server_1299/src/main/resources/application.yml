@@ -1,0 +1,18 @@
+server:
+  port: 1299
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: easybuy-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Orange0717/easybuy_config.git
+          username: Orange0717
+          password: cp07170903
