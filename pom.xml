@@ -14,6 +14,9 @@
         <module>easybuy03_zuul_gateway_9527</module>
         <module>easybuy04_basic_parent</module>
         <module>easybuy05_plat</module>
+        <module>easybuy06_product</module>
+        <module>easybuy_code_generation</module>
+        <module>easybuy_common_parent</module>
     </modules>
 
     <properties>

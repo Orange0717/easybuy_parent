@@ -10,8 +10,13 @@
         <module name="easybuy02_config_server_1299" />
         <module name="easybuy03_zuul_gateway_9527" />
         <module name="easybuy_basic_util" />
+        <module name="easybuy_code_generation" />
+        <module name="easybuy_common_interface" />
+        <module name="easybuy_common_service_8010" />
         <module name="easybuy_plat_interface" />
         <module name="easybuy_plat_server_8001" />
+        <module name="easybuy_product_interface" />
+        <module name="easybuy_product_server_8002" />
       </profile>
     </annotationProcessing>
   </component>

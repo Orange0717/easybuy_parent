@@ -1,0 +1,16 @@
+spring:
+  #profiles.active: 如果配置了多环境(多个application-环境)，可以指定一个环境
+  cloud:
+    config:
+      name: application-common #github上面名称
+      #profile: ${spring.profiles.active} #配置多环境
+      label: master #分支
+      discovery:
+        enabled: true #从eureka上面找配置服务
+        service-id: easybuy-config-server #指定服务名
+eureka: #eureka不能放到远程配置中
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka  #告诉服务提供者要把服务注册到哪儿 #单机环境
+  instance:
+    prefer-ip-address: true #显示客户端真实ip

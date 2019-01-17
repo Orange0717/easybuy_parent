@@ -10,5 +10,12 @@
     <file url="file://$PROJECT_DIR$/easybuy05_plat" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/easybuy05_plat/easybuy_plat_interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/easybuy05_plat/easybuy_plat_server_8001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy06_product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy06_product/easybuy_product_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy06_product/easybuy_product_server_8002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy_code_generation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy_common_parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy_common_parent/easybuy_common_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/easybuy_common_parent/easybuy_common_service_8010" charset="UTF-8" />
   </component>
 </project>
