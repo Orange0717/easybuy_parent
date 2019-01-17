@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itsource.easybuy.mapper.BrandMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.itsource.easybuy.domain.Brand">
+        <id column="id" property="id" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="englishName" property="englishName" />
+        <result column="firstLetter" property="firstLetter" />
+        <result column="description" property="description" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="sortIndex" property="sortIndex" />
+        <result column="logo" property="logo" />
+    </resultMap>
+
+    <!--自定义的封装具有关联属性的映射结果-->
+    <resultMap id="MyResultMap" type="cn.itsource.easybuy.domain.Brand">
+        <id column="id" property="id" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="englishName" property="englishName" />
+        <result column="firstLetter" property="firstLetter" />
+        <result column="description" property="description" />
+        <result column="product_type_id" property="productTypeId" />
+        <result column="sortIndex" property="sortIndex" />
+        <result column="logo" property="logo" />
+        <!--封装关联属性-->
+        <association property="productType" javaType="ProductType">
+            <id column="ptid" property="id"></id>
+            <result column="ptname" property="name"></result>
+        </association>
+    </resultMap>
+
+    <!--List<Brand> getPageList(Page<Brand> page, BrandQuery query);-->
+    <select id="getPageList" parameterType="BrandQuery" resultMap="MyResultMap">
+        select b.* ,pt.id ptid,pt.name ptname from t_brand b
+        left join t_product_type pt
+        on b.product_type_id = pt.id
+        <include refid="WhereSql"></include>
+    </select>
+
+    <sql id="WhereSql">
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                and (b.NAME  LIKE concat("%",#{keyword},"%")
+                or b.englishName  LIKE concat("%",#{keyword},"%")
+                or b.description  LIKE concat("%",#{keyword},"%"))
+            </if>
+        </where>
+    </sql>
+</mapper>
